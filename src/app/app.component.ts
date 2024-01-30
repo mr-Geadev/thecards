@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Category } from 'src/app/interfaces/category.interface';
+import { LessonService } from 'src/app/services/lesson.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'thecards';
+  lesson = this.lessonService.lesson
+
+  constructor(private lessonService: LessonService) {
+
+  }
+
 }

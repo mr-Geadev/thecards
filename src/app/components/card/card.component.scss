@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0b3627;
+  border-radius: 5px;
+  color: #0b3627;
+  padding: 20px;
+  height: 100%;
+  font-size: 45px;
+
+  &._answer {
+    background-color: #0b3627;
+    color: white;
+  }
+}

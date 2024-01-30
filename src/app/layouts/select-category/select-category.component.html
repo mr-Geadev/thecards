@@ -1,0 +1,6 @@
+<app-category
+  *ngFor="let category of categories"
+  [category]="category"
+  class="category-item"
+  (click)="startLesson(category)"
+></app-category>
