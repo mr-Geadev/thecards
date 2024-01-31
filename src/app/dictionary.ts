@@ -3,11 +3,15 @@ import { Dictionary } from 'src/app/interfaces/dictionary.interface';
 export const DICTIONARY: Dictionary = {
   categories: [
     {
-      name: 'Вводные слова',
+      name: 'слова Вводные слова',
       cards: [
         {
           question: 'However',
           answer: 'Однако'
+        },
+        {
+          question: 'So',
+          answer: 'Также'
         }
       ]
     },
