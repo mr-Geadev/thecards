@@ -1,4 +1,5 @@
 import { NgModule, isDevMode } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CardComponent } from 'src/app/components/card/card.component';
 import { CategoryComponent } from 'src/app/components/category/category.component';
@@ -20,6 +21,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

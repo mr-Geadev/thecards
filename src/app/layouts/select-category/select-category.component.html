@@ -1,5 +1,12 @@
+<select class="select-section" [formControl]="selectedSection" (change)="onChangeSection()">
+  <option
+    [value]="section.sectionKey"
+    *ngFor="let section of sectionList"
+  >{{ section.sectionName }}</option>
+</select>
+
 <app-category
-  *ngFor="let category of categories"
+  *ngFor="let category of categories()"
   [category]="category"
   class="category-item"
   (click)="startLesson(category)"

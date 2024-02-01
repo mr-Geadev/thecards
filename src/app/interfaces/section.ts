@@ -1,5 +1,6 @@
 import { Category } from 'src/app/interfaces/category.interface';
 
-export interface Dictionary {
+export interface Section {
+  name: string;
   categories: Category[];
 }
