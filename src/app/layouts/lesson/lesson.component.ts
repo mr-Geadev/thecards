@@ -28,4 +28,10 @@ export class LessonComponent {
 
     this.currentCardIndex += 1;
   }
+
+  markAsLearned(card: Card) {
+    this.lessonService.markAsLearned(card.question);
+    this.nextCard();
+  }
+
 }
