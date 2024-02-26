@@ -1,5 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { DATA } from 'src/app/data/data';
+import { Card } from 'src/app/interfaces/card.interface';
 
 const SELECTED_SECTION_KEY = 'selected-section';
 
@@ -16,6 +17,12 @@ export class DataService {
   public currentSection = computed(
     () => DATA[this.currentSectionKey()]
   )
+
+  public get allCardsInCurrentSection(): Card[] {
+    const cards: Card[] = [];
+    this.currentSection().categories.forEach((category) => cards.push(...category.cards))
+    return cards;
+  }
 
   get sectionsNameList() {
     return Object.entries(DATA).map(([key, section]) => {

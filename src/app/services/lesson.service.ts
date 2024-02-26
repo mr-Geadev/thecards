@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { shuffleArray } from 'src/app/helpers/shuffle';
 import { Card } from 'src/app/interfaces/card.interface';
 import { Category } from 'src/app/interfaces/category.interface';
+import { DataService } from 'src/app/services/data.service';
 
 const learnedQuestionKey = 'learned-answers';
 const splitter = '/nextQuestion/;'
@@ -13,14 +14,17 @@ const splitter = '/nextQuestion/;'
 export class LessonService {
   lesson = new BehaviorSubject<Card[] | null>(null);
 
+  constructor(private dataService: DataService) {}
+
   private get learnedQuestions(): string[] {
     const savedValue = localStorage.getItem(learnedQuestionKey);
     return savedValue ? savedValue.split(splitter) : [];
   }
 
-  startLesson(category: Category) {
+  startLesson(category?: Category) {
     const learnedQuestions = this.learnedQuestions;
-    const unknownCards = category.cards.filter((card) => !learnedQuestions.some(question => {
+    const cards = category ? category.cards : this.dataService.allCardsInCurrentSection;
+    const unknownCards = cards.filter((card) => !learnedQuestions.some(question => {
       return question === card.question
     }))
 

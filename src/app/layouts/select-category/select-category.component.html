@@ -5,6 +5,10 @@
   >{{ section.sectionName }}</option>
 </select>
 
+<button (click)="startLesson()" class="repeat-all-button">
+  Повторять все
+</button>
+
 <app-category
   *ngFor="let category of categories()"
   [category]="category"

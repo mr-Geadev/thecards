@@ -21,7 +21,7 @@ export class SelectCategoryComponent {
     private lessonService: LessonService,
   ) {}
 
-  startLesson(category: Category) {
+  startLesson(category?: Category) {
     this.lessonService.startLesson(category);
   }
 
