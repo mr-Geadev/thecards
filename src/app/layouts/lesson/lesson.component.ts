@@ -20,6 +20,10 @@ export class LessonComponent {
     private lessonService: LessonService
   ) {}
 
+  exitLesson() {
+    this.lessonService.endLesson();
+  }
+
   nextCard() {
     if (this.currentCardIndex === this.lesson.length - 1) {
       this.lessonService.endLesson();

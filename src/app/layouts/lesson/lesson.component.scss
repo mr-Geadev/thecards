@@ -2,6 +2,7 @@
   padding: 20px;
   height: 100vh;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -13,7 +14,6 @@
 }
 
 .next-button {
-  margin-top: 10px;
   background-color: #16224b;
   color: white;
   width: 100%;
@@ -25,7 +25,6 @@
 }
 
 .mark-learned {
-  margin-top: 10px;
   background-color: #2c519f;
   color: #16224b;
   width: 100%;
